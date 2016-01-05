@@ -13,24 +13,24 @@ var runSequence = require('run-sequence');
 /* 自动刷新 live load */
 // 定义 html 
 gulp.task('html', function() {
-    gulp.src('/app/*.html')
+    gulp.src('./app/*.html')
         .pipe(connect.reload());
 });
 // 定义 css 
 gulp.task('css', function() {
-    gulp.src('/app/css/*.css')
+    gulp.src('./app/css/*.css')
         .pipe(connect.reload());
 });
 // 定义 js 
 gulp.task('js', function() {
-    gulp.src('/app/js/*.js')
+    gulp.src('./app/js/*.js')
         .pipe(connect.reload());
 });
 // 定义 watch任务
 gulp.task('watch', function() {
-    gulp.watch('/app/*.html', ['html']);
-    gulp.watch('/app/css/*.css', ['css']);
-    gulp.watch('/app/js/*.js', ['js']);
+    gulp.watch('app/**/*.html', ['html']);
+    gulp.watch('app/css/*.css', ['css']);
+    gulp.watch('app/js/*.js', ['js']);
 });
 
 // js 语法检查
