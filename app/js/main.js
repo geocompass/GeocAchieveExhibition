@@ -2,33 +2,31 @@
 
     'use strict';
 
-    angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
+    require('angular');
+    require('angular-route');
+    require('angular-animate');
 
-    .config([
-        '$locationProvider',
-        '$routeProvider',
-        function($locationProvider, $routeProvider) {
-            $locationProvider.hashPrefix('!');
-            // routes
-            $routeProvider
-                .when("/", {
-                    templateUrl: "./partials/index.html",
-                    controller: "MainController"
-                })
-                .otherwise({
-                    redirectTo: '/'
-                });
-        }
-    ]);
+    var mainCtrl = require('../partials/partials');
 
-    //Load controller
-    angular.module('SampleApp')
+    var app = angular.module('app', ['ngRoute', 'ngAnimate'])
+        .config([
+            '$locationProvider',
+            '$routeProvider',
+            function($locationProvider, $routeProvider) {
+                $locationProvider.hashPrefix('!');
+                // routes
+                $routeProvider
+                    .when("/", {
+                        templateUrl: "./partials/partials.html",
+                        controller: "MainController"
+                    })
+                    .otherwise({
+                        redirectTo: '/'
+                    });
+            }
+        ])
+        //Load controller
+        .controller('MainController', ['$scope', mainCtrl]);
 
-    .controller('MainController', [
-        '$scope',
-        function($scope) {
-            $scope.test = "Testing...";
-        }
-    ]);
 
 }());

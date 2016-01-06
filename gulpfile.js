@@ -1,14 +1,14 @@
 // gulp
 var gulp = require('gulp');
 // plugins
-var connect = require('gulp-connect');
-var connect = require('gulp-connect');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
-var clean = require('gulp-clean');
-var runSequence = require('run-sequence');
-
+var connect = require('gulp-connect'); //web服务器
+var jshint = require('gulp-jshint'); //js语法检查
+var uglify = require('gulp-uglify'); //js压缩
+var minifyCSS = require('gulp-minify-css'); //压缩css
+var clean = require('gulp-clean'); //清理指定目录，如dist
+var runSequence = require('run-sequence'); //
+var browserify = require('gulp-browserify'); //borwserify
+var concat = require('gulp-concat'); //文件合并
 
 /* 自动刷新 live load */
 // 定义 html 
@@ -47,8 +47,25 @@ gulp.task('clean', function() {
         .pipe(clean({
             force: true
         }));
+    gulp.src('./app/js/bundled.js')
+        .pipe(clean({
+            force: true
+        }));
 });
 
+
+// js压缩与合并
+gulp.task('browserify', function() {
+    gulp.src(['app/js/main.js'])
+        .pipe(browserify({
+            insertGlobals: true,
+            debug: true
+        }))
+        .pipe(concat('bundled.js'))
+        .pipe(gulp.dest('./app/js'));
+});
+
+/* build project ------------------------------------------- */
 // 压缩css
 gulp.task('minify-css', function() {
     var opts = {
@@ -70,6 +87,17 @@ gulp.task('minify-js', function() {
         .pipe(gulp.dest('./dist/'))
 });
 
+// js压缩合并后存储到dist中
+gulp.task('browserifyDist', function() {
+    gulp.src(['app/js/main.js'])
+        .pipe(browserify({
+            insertGlobals: true,
+            debug: true
+        }))
+        .pipe(concat('bundled.js'))
+        .pipe(gulp.dest('./dist/js'));
+});
+
 // 拷贝bower下的文件到dist
 gulp.task('copy-bower-components', function() {
     gulp.src('./app/bower_components/**')
@@ -86,7 +114,7 @@ gulp.task('copy-html-files', function() {
 gulp.task('connect', function() {
     connect.server({
         root: 'app/',
-        port: 8080,
+        port: 8888,
         livereload: true
     });
 });
@@ -98,11 +126,11 @@ gulp.task('connectDist', function() {
         port: 9999
     });
 });
-
-gulp.task('default', ['connect', 'watch', 'lint']);
+//
+gulp.task('default', ['clean', 'lint', 'browserify', 'connect', 'watch']);
 
 gulp.task('build', function() {
     runSequence(
-        ['clean'], ['lint', 'minify-css', 'minify-js', 'copy-html-files', 'copy-bower-components', 'connectDist']
+        ['clean'], ['lint', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components', 'connectDist']
     );
 });
