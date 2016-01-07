@@ -130,13 +130,47 @@ body {
     display: block;
 }
 
+
 /*  主体内容区  */
 
-.app-content .container{
-	clear: both;
-	position: relative;
-	display: block;
-	height: 1000px;
-	background-color: #d2F291;
+.app-content .container {
+    clear: both;
+    position: relative;
+    display: block;
+    height: 1000px;
+    background-color: #d2F291;
+}
 
+.search-filter {
+    margin-top: 29px;
+    height: 45px;
+}
+
+.search-filter button,
+.search-filter input {
+    height: 45px;
+    font-size: 16px;
+}
+
+.search-filter button.btn-sort {
+    width: 122px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.search-filter button.btn-search {
+    width: 130px;
+    background-color: #0172ff;
+    color: #ffffff;
+    /*font-size: 16px;*/
+}
+
+.dividing-line {
+    display: inline-block;
+    margin: 0 27px;
+    font-size: 20px;
+    /*line-height: 40px;*/
+    color: #0172ff;
+    /*color: #0172ff;*/
+    vertical-align: middle;
 }
