@@ -13,29 +13,29 @@ var concat = require('gulp-concat'); //文件合并
 /* 自动刷新 live load */
 // 定义 html 
 gulp.task('html', function() {
-    gulp.src('./app/*.html')
+    gulp.src('./app/**/*.html')
         .pipe(connect.reload());
 });
 // 定义 css 
 gulp.task('css', function() {
-    gulp.src('./app/css/*.css')
+    gulp.src('./app/**/*.css')
         .pipe(connect.reload());
 });
 // 定义 js 
 gulp.task('js', function() {
-    gulp.src('./app/js/*.js')
+    gulp.src('./app/**/*.js')
         .pipe(connect.reload());
 });
 // 定义 watch任务
 gulp.task('watch', function() {
     gulp.watch('app/**/*.html', ['html']);
-    gulp.watch('app/css/*.css', ['css']);
-    gulp.watch('app/js/*.js', ['js']);
+    gulp.watch('app/**/*.css', ['css']);
+    gulp.watch('app/**/*.js', ['js']);
 });
 
 // js 语法检查
 gulp.task('lint', function() {
-    gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
+    gulp.src(['./app/**/*.js', '!./app/bower_components/**','!./app/js/bundled.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
@@ -126,8 +126,9 @@ gulp.task('connectDist', function() {
         port: 9999
     });
 });
-//
-gulp.task('default', ['clean', 'lint', 'browserify', 'connect', 'watch']);
+
+/* 执行任务------------------ */
+gulp.task('default', ['lint', 'browserify', 'connect', 'watch']);
 
 gulp.task('build', function() {
     runSequence(

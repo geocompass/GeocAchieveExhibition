@@ -1,0 +1,141 @@
+/* font-size:14,18,19,32 */
+
+body,
+table,
+div,
+span {
+    font-family: "Microsoft Yahei", arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header .container,
+#content .container,
+#footer {
+    width: 1200px;
+    min-width: 1140px;
+    width: 1200px;
+}
+
+
+/* footer  */
+
+.app-footer {
+    display: block;
+}
+
+#footer-hr {
+    color: #0069ad;
+    height: 1px;
+}
+
+#footer {
+    margin: 0 auto;
+    height: 92px;
+    text-align: center;
+    color: #0069ad;
+    font-size: 16px;
+}
+
+
+/* header  */
+
+.app-header,
+.header {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.banner {
+    height: 71px;
+    background-color: #0069ad;
+}
+
+.container {
+    /*background-color: #919900;*/
+    height: 71px;
+}
+
+#logo {
+    /*margin-top: 8px;*/
+    width: 138px;
+    height: 54px;
+    background: url('../img/sprite.png') -33px 112px;
+    border-size: 0;
+}
+
+.header-title {
+    /*display: inline-block;*/
+    line-height: 71px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-left: 10px;
+}
+
+#user-info {
+    /*background-color: #ff5f34;*/
+    width: 105px;
+    height: 40px;
+    /*vertical-align: middle;*/
+    margin-top: 15px;
+}
+
+#user-photo {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+#user-title {
+    width: 65px;
+    height: 40px;
+}
+
+#user-name {
+    /*text-align: center;*/
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#user-btn {
+    padding: 0;
+    bottom: 0;
+    text-align: right;
+}
+
+#user-title button {
+    width: 60px;
+    height: 18px;
+    font-size: 8px;
+}
+
+.slider-img img {
+    width: 100%;
+    height: 260px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    zoom: 1;
+    display: block;
+}
+
+/*  主体内容区  */
+
+.app-content .container{
+	clear: both;
+	position: relative;
+	display: block;
+	height: 1000px;
+	background-color: #d2F291;
+
+}

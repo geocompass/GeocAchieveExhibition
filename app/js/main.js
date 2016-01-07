@@ -5,8 +5,11 @@
     require('angular');
     require('angular-route');
     require('angular-animate');
+    // require('font-awesome');
+    // require('react');
 
-    var mainCtrl = require('../partials/partials');
+    var headerCtrl = require('../app/controller/header');
+    var appCtrl = require('../app/controller/app');
 
     var app = angular.module('app', ['ngRoute', 'ngAnimate'])
         .config([
@@ -17,8 +20,9 @@
                 // routes
                 $routeProvider
                     .when("/", {
-                        templateUrl: "./partials/partials.html",
-                        controller: "MainController"
+                        templateUrl: "./app/tpl/app.html",
+                        // controller: ["AppCtrl","headerCtrl"]
+                        controller: "AppCtrl"
                     })
                     .otherwise({
                         redirectTo: '/'
@@ -26,7 +30,7 @@
             }
         ])
         //Load controller
-        .controller('MainController', ['$scope', mainCtrl]);
-
+        .controller('AppCtrl', ['$scope', '$window', appCtrl])
+        .controller('headerCtrl', ['$scope','$rootScope', '$http', headerCtrl]);
 
 }());

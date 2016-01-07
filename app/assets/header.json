@@ -1,0 +1,14 @@
+{
+    "companyname": "国信司南公司研发项目成果展示",
+    "user": {
+        "1": {
+            "username": "geoc",
+            "photosrc": "img/user-photo.jpg"
+        }
+    },
+    "slider": {
+        "1": "img/slider1.png",
+        "2": "img/slider2.png",
+        "3": "img/slider3.png"
+    }
+}
