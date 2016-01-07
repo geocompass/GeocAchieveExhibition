@@ -1,10 +1,9 @@
 {
     "companyname": "国信司南公司研发项目成果展示",
+    "hoster": "主办单位：国信司南（北京）地理信息技术有限公司",
     "user": {
-        "1": {
-            "username": "geoc",
-            "photosrc": "img/user-photo.jpg"
-        }
+        "username": "GEOC",
+        "photosrc": "img/user-photo.jpg"
     },
     "slider": {
         "1": "img/slider1.png",

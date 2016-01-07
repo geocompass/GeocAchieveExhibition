@@ -1,15 +1,15 @@
-<div id="header" ng-controller="headerCtrl">
+<div id="header">
     <div class="banner">
         <div class="container">
             <div id="">
                 <img id="logo">
-                <span class="header-title">{{companyName}}</span>
+                <span class="header-title">{{companyname}}</span>
                 <div id="user-info" class="pull-right">
                     <div id="user-photo">
-                        <img src="../img/user-photo.jpg" title="">
+                        <img ng-src="{{user.photosrc}}" title="">
                     </div>
                     <div id="user-title" class="pull-right">
-                        <div id="user-name">BGQ.PC</div>
+                        <div id="user-name">{{user.username}}</div>
                         <div id="user-btn">
                             <!-- <button class="btn btn-default btn-xs">注销</button> -->
                             <button>注销</button>
@@ -19,7 +19,5 @@
             </div>
         </div>
     </div>
-    <div class="slider-img">
-        <img ng-src="{{sliderSrc}}">
-    </div>
+    <div ng-slider></div>
 </div>
