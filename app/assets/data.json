@@ -5,9 +5,37 @@
         "username": "GEOC",
         "photosrc": "img/user-photo.jpg"
     },
-    "slider": {
-        "1": "img/slider1.png",
-        "2": "img/slider2.png",
-        "3": "img/slider3.png"
-    }
+    "slider": [{
+        "id":"1","src":"img/slider1.png"
+    }, {
+        "id":"2","src":"img/slider2.png"
+    }, {
+        "id":"3","src":"img/slider3.png"
+    }],
+    "projects": [{
+        "year": "2015",
+        "type": "1",
+        "title": "中国世界遗产监测预警",
+        "date": "2015-05-26"
+    }, {
+        "year": "2015",
+        "type": "1",
+        "title": "中国世界遗产监测预警",
+        "date": "2015-05-26"
+    }, {
+        "year": "2015",
+        "type": "1",
+        "title": "中国世界遗产监测预警",
+        "date": "2015-05-26"
+    }, {
+        "year": "2015",
+        "type": "1",
+        "title": "中国世界遗产监测预警",
+        "date": "2015-05-26"
+    }, {
+        "year": "2015",
+        "type": "1",
+        "title": "中国世界遗产监测预警",
+        "date": "2015-05-26"
+    }]
 }
