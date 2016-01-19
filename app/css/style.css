@@ -226,28 +226,31 @@ body {
     border-size: 0;
     background: url('../img/sprite.png') -33px -172px;
 }
-
-.catagory-title > img.catagory-red {
+.catagory-title > img.catagory-year {
     background: url('../img/sprite.png') -325px -115px;
 }
 
-.catagory-title > img.catagory-brown {
+.catagory-title > img.catagory-landuse {
+    background: url('../img/sprite.png') -325px -115px;
+}
+
+.catagory-title > img.catagory-relic {
     background: url('../img/sprite.png') -179px -115px;
 }
 
-.catagory-title > img.catagory-blue-light {
+.catagory-title > img.catagory-technology {
     background: url('../img/sprite.png') -179px -152px;
 }
 
-.catagory-title > img.catagory-blue {
+.catagory-title > img.catagory-customs {
     background: url('../img/sprite.png') -325px -152px;
 }
 
-.catagory-title > img.catagory-cyan {
+.catagory-title > img.catagory-services {
     background: url('../img/sprite.png') -179px -189px;
 }
 
-.catagory-title > img.catagory-green {
+.catagory-title > img.catagory-data {
     background: url('../img/sprite.png') -325px -189px;
 }
 
@@ -318,9 +321,9 @@ body {
 }
 
 
-/* 样式1 棕色 */
+/* 样式1 棕色 文物 */
 
-.catagory-item .prj-style-1 {
+.catagory-item .prj-style-relic {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #aa6b0a, #ffffff);
@@ -333,26 +336,26 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-1 > img {
+.catagory-item .prj-style-relic > img {
     background: url('../img/sprite.png') 0 0px;
 }
 
-.catagory-item .prj-style-1 .project-name {
+.catagory-item .prj-style-relic .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-1 .project-date {
+.catagory-item .prj-style-relic .project-date {
     color: #aa6b0a;
 }
 
-.catagory-item .prj-style-1 .project-come {
+.catagory-item .prj-style-relic .project-come {
     background-color: #aa6b0a;
 }
 
 
-/* 样式2  红色*/
+/* 样式2  红色 国土测绘 */
 
-.catagory-item .prj-style-2 {
+.catagory-item .prj-style-landuse {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #aa2100, #ffffff);
@@ -365,27 +368,27 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-2 > img {
+.catagory-item .prj-style-landuse > img {
     /*height: 32> px;*/
     background: url('../img/sprite.png') 0 -72px;
 }
 
-.catagory-item .prj-style-2 .project-name {
+.catagory-item .prj-style-landuse .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-2 .project-date {
+.catagory-item .prj-style-landuse .project-date {
     color: #aa2100;
 }
 
-.catagory-item .prj-style-2 .project-come {
+.catagory-item .prj-style-landuse .project-come {
     background-color: #aa2100;
 }
 
 
-/* 样式3 浅蓝 */
+/* 样式3 浅蓝 科技 */
 
-.catagory-item .prj-style-3 {
+.catagory-item .prj-style-technology {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #0068ad, #ffffff);
@@ -398,25 +401,25 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-3 > img {
+.catagory-item .prj-style-technology > img {
     background: url('../img/sprite.png') 0 -108px;
 }
 
-.catagory-item .prj-style-3 .project-name {
+.catagory-item .prj-style-technology .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-3 .project-date {
+.catagory-item .prj-style-technology .project-date {
     color: #0068ad;
 }
 
-.catagory-item .prj-style-3 .project-come {
+.catagory-item .prj-style-technology .project-come {
     background-color: #0068ad;
 }
 
-/* 样式4 深蓝 */
+/* 样式4 深蓝 海关 */
 
-.catagory-item .prj-style-4 {
+.catagory-item .prj-style-customs {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #0050ad, #ffffff);
@@ -429,26 +432,26 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-4 > img {
+.catagory-item .prj-style-customs > img {
     background: url('../img/sprite.png') 0 -144px;
 }
 
-.catagory-item .prj-style-4 .project-name {
+.catagory-item .prj-style-customs .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-4 .project-date {
+.catagory-item .prj-style-customs .project-date {
     color: #0050ad;
 }
 
-.catagory-item .prj-style-4 .project-come {
+.catagory-item .prj-style-customs .project-come {
     background-color: #0050ad;
 }
 
 
-/* 样式5 青色 */
+/* 样式5 青色 基础服务 */
 
-.catagory-item .prj-style-5 {
+.catagory-item .prj-style-services {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #01ba9b, #ffffff);
@@ -461,26 +464,26 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-5 > img {
+.catagory-item .prj-style-services > img {
     background: url('../img/sprite.png') 0 -36px;
 }
 
-.catagory-item .prj-style-5 .project-name {
+.catagory-item .prj-style-services .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-5 .project-date {
+.catagory-item .prj-style-services .project-date {
     color: #01ba9b;
 }
 
-.catagory-item .prj-style-5 .project-come {
+.catagory-item .prj-style-services .project-come {
     background-color: #01ba9b;
 }
 
 
-/* 样式6 绿色 */
+/* 样式6 绿色 数据展示 */
 
-.catagory-item .prj-style-6 {
+.catagory-item .prj-style-database {
     background: red;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #49ab00, #ffffff);
@@ -493,18 +496,18 @@ body {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-6 > img {
+.catagory-item .prj-style-database > img {
     background: url('../img/sprite.png') 0 -180px;
 }
 
-.catagory-item .prj-style-6 .project-name {
+.catagory-item .prj-style-database .project-name {
     color: #ffffff;
 }
 
-.catagory-item .prj-style-6 .project-date {
+.catagory-item .prj-style-database .project-date {
     color: #49ab00;
 }
 
-.catagory-item .prj-style-6 .project-come {
+.catagory-item .prj-style-database .project-come {
     background-color: #49ab00;
 }

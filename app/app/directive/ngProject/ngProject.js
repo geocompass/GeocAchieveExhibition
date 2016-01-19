@@ -11,20 +11,21 @@ module.exports = function($rootScope, $http) {
                 .success(function(_data) {
                     var data = _data;
                     if (data) {
-                        $scope.projects = data.projects;
-                        if ($scope.projects) {
-                            showProject();
-                        }
+                    	$scope.catagorySortby = data.projects.sortby;
+                        $scope.catagories = data.projects.data;
+                        // if ($scope.catagories) {
+                        //     showProject();
+                        // }
                         // console.log("$scope.projects:", $scope.projects);
                     }
                 })
                 .error(function(data2) {
                     console.log("error");
                 });
-            var showProject = function() {
-                var projects = $scope.projects;
-                console.log("projects:", $scope.projects);
-            };
+            // var showProject = function() {
+            //     var projects = $scope.projects;
+            //     console.log("projects:", $scope.projects);
+            // };
 
         }
     };
