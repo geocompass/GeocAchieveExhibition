@@ -31,7 +31,9 @@ body {
 
 #footer-hr {
     color: #0069ad;
-    height: 1px;
+    background-color: #0069ad;
+    height: 2px;
+    /*width: 2px;*/    
 }
 
 #footer {
@@ -66,7 +68,7 @@ body {
     /*margin-top: 8px;*/
     width: 138px;
     height: 54px;
-    background: url('../img/sprite.png') -33px 112px;
+    background: url('../img/sprite.png') -33px -115px;
     border-size: 0;
 }
 
@@ -137,8 +139,8 @@ body {
     /*clear: both;*/
     position: relative;
     display: block;
-    /*height: 1000px;*/
-    background-color: #d2F291;
+    height: 1030px;
+    /*background-color: #d2F291;*/
 }
 
 .search-filter {
@@ -176,33 +178,333 @@ body {
 }
 
 
-/* 项目列表展示 */
+/* 项目列表展示 ---------------------------- */
 
 .two-columns {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-width: 400px;
-    -moz-column-width: 400px;
-    column-width: 400px;
+    -webkit-column-width: 570;
+    -moz-column-width: 570;
+    column-width: 570;
     /*-webkit-column-gap: 20px;
       -moz-column-gap: 20px;
            column-gap: 20px;*/
-           -moz-column-fill: auto;
-    padding: 3px;
-    background-color: #00ffcc;
+    -moz-column-fill: auto;
+    /*padding: 3px;*/
+    /*background-color: #0088cc;*/
+    height: 900px;
 }
 
-@media (min-width: 400px) {
+
+/*@media (min-width: 520px) {
     .two-columns {
-        height: 950px;
+        height: 900px;
     }
+}*/
+
+
+/*标题头*/
+
+.catagory-item {
+    width: 520px;
+    /*height: 400px;*/
+    /*background-color: #aaccff;*/
+    margin-bottom: 20px;
+}
+
+.catagory-title {
+    margin: 0 auto;
+    width: 146px;
+    position: relative;
+    margin-bottom: 9px;
+}
+
+.catagory-title > img {
+    width: 146px;
+    height: 37px;
+    border-size: 0;
+    background: url('../img/sprite.png') -33px -172px;
+}
+
+.catagory-title > img.catagory-red {
+    background: url('../img/sprite.png') -325px -115px;
+}
+
+.catagory-title > img.catagory-brown {
+    background: url('../img/sprite.png') -179px -115px;
+}
+
+.catagory-title > img.catagory-blue-light {
+    background: url('../img/sprite.png') -179px -152px;
+}
+
+.catagory-title > img.catagory-blue {
+    background: url('../img/sprite.png') -325px -152px;
+}
+
+.catagory-title > img.catagory-cyan {
+    background: url('../img/sprite.png') -179px -189px;
+}
+
+.catagory-title > img.catagory-green {
+    background: url('../img/sprite.png') -325px -189px;
+}
+
+.catagory-title > span {
+    position: absolute;
+    line-height: 37px;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 800;
 }
 
 
-.col-item {
-    width: 300px;
-    height: 400px;
-    background-color: #ff00ff;
-    margin: 5px;
+/*项目信息-----------------*/
+
+.project-item {
+    width: 500px;
+    height: 36px;
+    font-size: 15px;
+    line-height: 36px;
+    margin-bottom: 3px;
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #aa6b0a, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #aa6b0a, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #aa6b0a, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #aa6b0a, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.project-item > img {
+    width: 33px;
+    height: 36px;
+    background: url('../img/sprite.png') 0 0px;
+    margin-top: -4px;
+}
+
+.project-item .project-name {
+    line-height: 36px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.project-item .project-date {
+    color: #aa6b0a;
+    margin-right: 18px;
+}
+
+.project-item .project-come {
+    height: 36px;
+    width: 44px;
+    background-color: #aa6b0a;
+    text-align: center;
+}
+
+.project-item .project-come > img {
+    height: 36px;
+    width: 44px;
+    background: url('../img/sprite.png') 0px -216px;
+    margin-top: -3px;
+}
+
+
+/* 样式1 棕色 */
+
+.catagory-item .prj-style-1 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #aa6b0a, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #aa6b0a, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #aa6b0a, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #aa6b0a, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-1 > img {
+    background: url('../img/sprite.png') 0 0px;
+}
+
+.catagory-item .prj-style-1 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-1 .project-date {
+    color: #aa6b0a;
+}
+
+.catagory-item .prj-style-1 .project-come {
+    background-color: #aa6b0a;
+}
+
+
+/* 样式2  红色*/
+
+.catagory-item .prj-style-2 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #aa2100, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #aa2100, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #aa2100, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #aa2100, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-2 > img {
+    /*height: 32> px;*/
+    background: url('../img/sprite.png') 0 -72px;
+}
+
+.catagory-item .prj-style-2 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-2 .project-date {
+    color: #aa2100;
+}
+
+.catagory-item .prj-style-2 .project-come {
+    background-color: #aa2100;
+}
+
+
+/* 样式3 浅蓝 */
+
+.catagory-item .prj-style-3 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #0068ad, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0068ad, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0068ad, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0068ad, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-3 > img {
+    background: url('../img/sprite.png') 0 -108px;
+}
+
+.catagory-item .prj-style-3 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-3 .project-date {
+    color: #0068ad;
+}
+
+.catagory-item .prj-style-3 .project-come {
+    background-color: #0068ad;
+}
+
+/* 样式4 深蓝 */
+
+.catagory-item .prj-style-4 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #0050ad, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0050ad, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0050ad, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0050ad, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-4 > img {
+    background: url('../img/sprite.png') 0 -144px;
+}
+
+.catagory-item .prj-style-4 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-4 .project-date {
+    color: #0050ad;
+}
+
+.catagory-item .prj-style-4 .project-come {
+    background-color: #0050ad;
+}
+
+
+/* 样式5 青色 */
+
+.catagory-item .prj-style-5 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #01ba9b, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #01ba9b, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #01ba9b, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #01ba9b, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-5 > img {
+    background: url('../img/sprite.png') 0 -36px;
+}
+
+.catagory-item .prj-style-5 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-5 .project-date {
+    color: #01ba9b;
+}
+
+.catagory-item .prj-style-5 .project-come {
+    background-color: #01ba9b;
+}
+
+
+/* 样式6 绿色 */
+
+.catagory-item .prj-style-6 {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #49ab00, #ffffff);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #49ab00, #ffffff);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #49ab00, #ffffff);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #49ab00, #ffffff);
+    /* Standard syntax (must be last) */
+}
+
+.catagory-item .prj-style-6 > img {
+    background: url('../img/sprite.png') 0 -180px;
+}
+
+.catagory-item .prj-style-6 .project-name {
+    color: #ffffff;
+}
+
+.catagory-item .prj-style-6 .project-date {
+    color: #49ab00;
+}
+
+.catagory-item .prj-style-6 .project-come {
+    background-color: #49ab00;
 }

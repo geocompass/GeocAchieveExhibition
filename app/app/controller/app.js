@@ -3,7 +3,7 @@ module.exports = function($scope, $window, $http) {
     console.log("appCtrl required");
     //定义url
     $scope.base_url = "http://localhost:8888/";
-    
+
 
     // 获取数据
     $http.get('assets/data.json')
@@ -15,6 +15,7 @@ module.exports = function($scope, $window, $http) {
                 $scope.hoster = data.hoster;
                 $scope.slider = data.slider;
                 $scope.user = data.user;
+                // $scope.projects = data.projects;
 
                 // //获取slider的数量
                 // var sliderCount = Object.keys($scope.slider).length;

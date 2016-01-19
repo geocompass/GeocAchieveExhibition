@@ -14,8 +14,7 @@ module.exports = function($rootScope, $http) {
                 var sliderCount = Object.keys($scope.slider).length;
                 //随机获取一张图片
                 var randomInt = getRandomInt(1, sliderCount);
-                var slider = $scope.slider[randomInt - 1];
-                console.log("slider:",slider);
+                var slider = $scope.slider[randomInt - 1];                
                 if (slider) {
                     $scope.sliderSrc = slider.src;
                 }
