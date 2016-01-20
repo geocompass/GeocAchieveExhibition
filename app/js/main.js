@@ -16,6 +16,8 @@
     var bannerDirective = require('../app/directive/ngBanner/ngbanner.js');
     var projectDirective = require('../app/directive/ngProject/ngproject.js');
     var footerDirective = require('../app/directive/ngFooter/ngfooter.js');
+    // service
+    var filterByKey = require('../app/service/filterByKey.js');
 
     var app = angular.module('app', ['ngRoute', 'ngAnimate'])
         .config([
@@ -35,12 +37,14 @@
                     });
             }
         ])
-        //Load controller
-        .controller('AppCtrl', ['$scope', '$window', '$http', appCtrl])
+        // load service
+        .service('FilterByKey', ['$filter', filterByKey])
         // load directives
         .directive('ngBanner', ['$rootScope', '$http', bannerDirective])
         .directive('ngSlider', ['$rootScope', '$http', sliderDirective])
-        .directive('ngProject', ['$rootScope', '$http', projectDirective])
-        .directive('ngFooter', ['$rootScope', '$http', footerDirective]);
+        .directive('ngProject', ['$rootScope', '$http', 'FilterByKey', projectDirective])
+        .directive('ngFooter', ['$rootScope', '$http', footerDirective])
+        // load controller
+        .controller('AppCtrl', ['$scope', '$window', '$http', appCtrl]);
 
 }());

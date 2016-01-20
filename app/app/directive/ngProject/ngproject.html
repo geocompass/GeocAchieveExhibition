@@ -3,12 +3,12 @@
         <div class="pull-right">
             <div class="dividing-line">|</div>
             <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default btn-sort">按时间</button>
-                <button type="button" class="btn btn-default btn-sort">按类型</button>
+                <button type="button" class="btn btn-default btn-sort" ng-click="sortByDate(catagories);">按时间</button>
+                <button type="button" class="btn btn-default btn-sort" ng-click="sortByType(catagories);">按类型</button>
             </div>
         </div>
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="请输入项目名称...">
+            <input type="text" class="form-control" placeholder="请输入项目名称..." ng-model="searchKey">
             <span class="input-group-btn">
                 <button class="btn btn-default btn-search" type="button">搜索</button>
             </span>
@@ -18,7 +18,7 @@
     <div class="two-columns">
         <div class="catagory-item" ng-repeat="(key, catagory) in catagories">
             <div class="catagory-title">
-                <img ng-class="'{{catagory.type}}'"/>
+                <img ng-class="'{{catagory.type}}'" />
                 <span> {{catagory.name}}</span>
             </div>
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in catagory.data">
@@ -28,8 +28,6 @@
                 <span class="project-date pull-right">{{project.date}}</span>
             </div>
         </div>
-
-
         <!-- <div class="catagory-item">
             <div class="catagory-title">
                 <img class="catagory-green"/>
