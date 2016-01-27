@@ -29,7 +29,7 @@ body {
     display: block;
 }
 
-#footer-hr {
+hr {
     color: #0069ad;
     background-color: #0069ad;
     height: 2px;
@@ -177,6 +177,11 @@ body {
     vertical-align: middle;
 }
 
+/* 搜索结果展示---------------------------------- */
+.search-project{
+    margin: 0 auto;
+    width: 900px;
+}
 
 /* 项目列表展示 ---------------------------- */
 

@@ -15,10 +15,24 @@
         </div>
     </div>
     <!-- <div style="clear:both"></div> -->
+    <!-- 搜索结果  -->
+    <div ng-show="searchkey">
+        <div class="search-project catagory-item">
+            <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in searchResult">
+                <img />
+                <span class="project-name">{{project.title}}</span>
+                <span class="project-come pull-right"><img /></span>
+                <span class="project-date pull-right">{{project.date}}</span>
+            </div>
+        </div>
+        <div ng-hide="hasSearchResult"><span>没有搜索到结果。</span></div>
+        <hr id="footer-hr">
+    </div>
+    <!-- 项目展示 -->
     <div class="two-columns">
         <div class="catagory-item" ng-repeat="(key, catagory) in catagories">
             <div class="catagory-title">
-                <img ng-class="'{{catagory.type}}'" />
+                <img ng-class="'catagory-{{catagory.type}}'" />
                 <span> {{catagory.name}}</span>
             </div>
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in catagory.data">
@@ -28,47 +42,5 @@
                 <span class="project-date pull-right">{{project.date}}</span>
             </div>
         </div>
-        <!-- <div class="catagory-item">
-            <div class="catagory-title">
-                <img class="catagory-green"/>
-                <span> 2015</span>
-            </div>
-            <div class="project-item prj-style-1">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-            <div class="project-item prj-style-2">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-            <div class="project-item prj-style-3">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-            <div class="project-item prj-style-4">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-            <div class="project-item prj-style-5">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-            <div class="project-item prj-style-6">
-                <img />
-                <span class="project-name">这是一个项目名称</span>
-                <span class="project-come pull-right"><img /></span>
-                <span class="project-date pull-right">2015-01-25</span>
-            </div>
-        </div> -->
     </div>
 </div>

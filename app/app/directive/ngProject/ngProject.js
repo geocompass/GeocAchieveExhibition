@@ -24,11 +24,31 @@ module.exports = function($rootScope, $http, FilterByKey) {
                     console.log("error");
                 });
 
+            // 自动检测搜索框
+            $scope.$watch('searchkey',function(newvalue,oldvalue){
+            	searchProject($scope.searchkey);
+            });
+
             // 搜索过滤
             $scope.searchProject = function() {
-                var result = FilterByKey.filterByKey($scope.projects, $scope.searchkey);
-                for (var p in result) {
-                    console.log(result[p].date, result[p].type, result[p].title);
+            	searchProject($scope.searchkey);
+            };
+            var searchProject = function(searchkey){
+            	var sortResult = {};
+            	if($scope.catagorySort == "year"){
+            		sortResult = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
+            	}else if($scope.catagorySort == "type"){
+            		sortResult = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
+            	}
+                $scope.searchResult = FilterByKey.filterByKey(sortResult, searchkey);
+                if(Object.keys($scope.searchResult).length === 0){
+                	$scope.hasSearchResult = false;
+                }else{
+                	$scope.hasSearchResult = true;
+                }
+                console.log("search result:",$scope.searchResult);
+                for (var p in $scope.searchResult) {
+                    console.log($scope.searchResult[p].date, $scope.searchResult[p].type, $scope.searchResult[p].title);
                 }
                 console.log("-------------------");
             };
@@ -38,20 +58,14 @@ module.exports = function($rootScope, $http, FilterByKey) {
                 var result = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
                 $scope.catagorySort = "year"; //默认时间year排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
-                for (var p in $scope.catagories) {
-                    console.log($scope.catagories[p].date, $scope.catagories[p].type);
-                }
-                console.log("-------------------");
+                return $scope.catagories;
             };
             // 按照类别排序
             $scope.sortByType = function() {
                 var result = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
                 $scope.catagorySort = "type"; //默认时间date排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
-                for (var p in $scope.catagories) {
-                    console.log($scope.catagories[p].type, $scope.catagories[p].date);
-                }
-                console.log("-------------------");
+                return $scope.catagories;
             };
 
         }

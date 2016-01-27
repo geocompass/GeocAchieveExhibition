@@ -1,5 +1,5 @@
 module.exports = function($filter) {
-	// json 排序，支持两个属性
+    // json 排序，支持两个属性
     var sortJsonArray = function(objArray, sort1, sort2) {
         if (arguments.length < 2) throw new Error("sortJsonArrayByProp requires 2 arguments");
 
@@ -37,44 +37,50 @@ module.exports = function($filter) {
                     var result = obj.title.indexOf(filterKey) >= 0;
                     return result;
                 });
-                console.log("filter:",result);
+                console.log("filter:", result);
                 return result;
             }
         }
     };
 
     // 重新塑造结构
-    var reconstructData = function(data, catagory){
-    	var objArray = data;
-    	if (objArray && objArray.constructor === Array && catagory) {
-    		var result = [];
-    		var curCatagory = {};
-    		if(catagory === "date"){
-    			var curCtg = catagory;
-    			for(var obj in objArray){
-    				var prj = objArray[obj];
-    				if(curCtg != prj[catagory]){
-    					if(curCatagory){
-    						result.push(curCatagory);
-    					}
-    					curCatagory = {};
-    					curCatagory.name = prj.year;
-    					curCatagory.type = "year";
-    				}else{
-    					if(curCatagory){
-    						curCatagory.push(prj);
-    					}
-    				}
-    			}
-    		}else if(catagory === "type"){
-
-    		}
-    		return result;
-    	}
+    var reconstructData = function(data, catagory) {
+        var objArray = data;
+        if (objArray && objArray.constructor === Array && catagory) {
+            var result = [];
+            var curCatagory = {};
+            var curCtg;
+            for (var obj in objArray) {
+                var prj = objArray[obj];
+                if (!prj) {
+                    continue;
+                }
+                if (curCtg != prj[catagory]) {
+                    if (curCatagory && Object.keys(curCatagory).length !== 0) {
+                        result.push(curCatagory);
+                    }
+                    curCatagory = {};
+                    if (catagory === "year") {
+                        curCatagory.name = prj.year;
+                        curCatagory.type = "year";
+                    } else if (catagory === "type") {
+                    	curCatagory.name = prj.type;
+                    	curCatagory.type = prj.type;
+                    }
+                    curCatagory.data = [];
+                } else {
+                    if (curCatagory && Object.keys(curCatagory).length !== 0) {
+                        curCatagory.data.push(prj);
+                    }
+                }
+                curCtg = prj[catagory];
+            }
+            return result;
+        }
     };
 
     return {
-    	// 排序
+        // 排序
         sortByAttr: function(data, sort1, sort2) {
             var results = data;
             return sortJsonArray(results, sort1, sort2);
@@ -85,8 +91,8 @@ module.exports = function($filter) {
             return filterJsonArray(results, filterKey);
         },
         // 拼接结构
-        reconstructData: function(data,catagory){
-        	return reconstructData(data,catagory);
+        reconstructData: function(data, catagory) {
+            return reconstructData(data, catagory);
         }
     };
 };
