@@ -26,6 +26,7 @@ body {
 /* footer  */
 
 .app-footer {
+    clear: both;
     display: block;
 }
 
@@ -33,7 +34,7 @@ hr {
     color: #0069ad;
     background-color: #0069ad;
     height: 2px;
-    /*width: 2px;*/    
+    /*width: 2px;*/
 }
 
 #footer {
@@ -61,7 +62,7 @@ hr {
 
 .container {
     /*background-color: #919900;*/
-    height: 71px;
+    /*height: 71px;*/
 }
 
 #logo {
@@ -139,11 +140,12 @@ hr {
     /*clear: both;*/
     position: relative;
     display: block;
-    height: 1030px;
+    /*height: 1030px;*/
     /*background-color: #d2F291;*/
 }
 
- /* 搜索过滤 */
+
+/* 搜索过滤 */
 
 .search-filter {
     margin: 29px 0px 38px 0px;
@@ -184,11 +186,14 @@ hr {
     background-color: #62c300
 }
 
+
 /* 搜索结果展示---------------------------------- */
-.search-project{
+
+.search-project.catagory-item {
     margin: 0 auto;
-    width: 900px;
+    width: 550px;
 }
+
 
 /* 项目列表展示 ---------------------------- */
 
@@ -200,12 +205,12 @@ hr {
     -moz-column-width: 570;
     column-width: 570;
     -webkit-column-gap: 74px;
-      -moz-column-gap: 74px;
-           column-gap: 74px;
+    -moz-column-gap: 74px;
+    column-gap: 74px;
     -moz-column-fill: auto;
     /*padding: 3px;*/
     /*background-color: #0088cc;*/
-    height: 900px;
+    /*height: 900px;*/
 }
 
 
@@ -223,6 +228,17 @@ hr {
     /*height: 400px;*/
     /*background-color: #aaccff;*/
     margin-bottom: 20px;
+    
+    /*每个项目不割裂开 */
+    margin: 0;
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari */
+    page-break-inside: avoid;
+    /* Theoretically FF 20+ */
+    break-inside: avoid-column;
+    /* IE 11 */
+    display: table;
+    /* Actually FF 20+ */
 }
 
 .catagory-title {
@@ -238,6 +254,7 @@ hr {
     border-size: 0;
     background: url('../img/sprite.png') -33px -172px;
 }
+
 .catagory-title > img.catagory-year {
     background: url('../img/sprite.png') -325px -115px;
 }
@@ -428,6 +445,7 @@ hr {
 .catagory-item .prj-style-technology .project-come {
     background-color: #0068ad;
 }
+
 
 /* 样式4 深蓝 海关 */
 

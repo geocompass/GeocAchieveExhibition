@@ -16,7 +16,7 @@ module.exports = function($rootScope, $http, FilterByKey) {
                         $scope.catagorySort = "year"; //默认时间year排序，还可以类型type排序
                         $scope.projects = data.projects;
 
-                        $scope.sortByDate();
+                        $scope.sortByType();
 
                         // if ($scope.catagories) {
                         //     showProject();
