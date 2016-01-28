@@ -2,9 +2,9 @@
     <div class="search-filter">
         <div class="pull-right">
             <div class="dividing-line">|</div>
-            <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default btn-sort" ng-click="sortByDate(catagories);">按时间</button>
-                <button type="button" class="btn btn-default btn-sort" ng-click="sortByType(catagories);">按类型</button>
+            <div class="btn-group btn-toggle">
+                <button type="button" class="btn btn-default btn-sort" id="sortDateBtn" ng-click="sortByDate(catagories);">按时间</button>
+                <button type="button" class="btn btn-default btn-sort" id="sortTypeBtn" ng-click="sortByType(catagories);">按类型</button>
             </div>
         </div>
         <div class="input-group">
@@ -20,6 +20,7 @@
         <div class="search-project catagory-item">
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in searchResult">
                 <img />
+                <span class="project-name">[{{project.typename}}]</span>
                 <span class="project-name">{{project.title}}</span>
                 <span class="project-come pull-right"><img /></span>
                 <span class="project-date pull-right">{{project.date}}</span>
@@ -37,6 +38,7 @@
             </div>
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in catagory.data">
                 <img />
+                <span class="project-name">[{{project.typename}}]</span>
                 <span class="project-name">{{project.title}}</span>
                 <span class="project-come pull-right"><img /></span>
                 <span class="project-date pull-right">{{project.date}}</span>

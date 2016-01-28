@@ -4,6 +4,8 @@ module.exports = function($rootScope, $http, FilterByKey) {
         templateUrl: '../app/directive/ngProject/ngproject.html',
         link: function($scope, iElm, iAttr) {
 
+            $scope.hasSearchResult = true;
+
             console.log("load ngProject");
 
             // 获取数据
@@ -13,6 +15,8 @@ module.exports = function($rootScope, $http, FilterByKey) {
                     if (data) {
                         $scope.catagorySort = "year"; //默认时间year排序，还可以类型type排序
                         $scope.projects = data.projects;
+
+                        $scope.sortByDate();
 
                         // if ($scope.catagories) {
                         //     showProject();
@@ -25,28 +29,28 @@ module.exports = function($rootScope, $http, FilterByKey) {
                 });
 
             // 自动检测搜索框
-            $scope.$watch('searchkey',function(newvalue,oldvalue){
-            	searchProject($scope.searchkey);
+            $scope.$watch('searchkey', function(newvalue, oldvalue) {
+                searchProject($scope.searchkey);
             });
 
             // 搜索过滤
             $scope.searchProject = function() {
-            	searchProject($scope.searchkey);
+                searchProject($scope.searchkey);
             };
-            var searchProject = function(searchkey){
-            	var sortResult = {};
-            	if($scope.catagorySort == "year"){
-            		sortResult = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
-            	}else if($scope.catagorySort == "type"){
-            		sortResult = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
-            	}
-                $scope.searchResult = FilterByKey.filterByKey(sortResult, searchkey);
-                if(Object.keys($scope.searchResult).length === 0){
-                	$scope.hasSearchResult = false;
-                }else{
-                	$scope.hasSearchResult = true;
+            var searchProject = function(searchkey) {
+                var sortResult = {};
+                if ($scope.catagorySort == "year") {
+                    sortResult = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
+                } else if ($scope.catagorySort == "type") {
+                    sortResult = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
                 }
-                console.log("search result:",$scope.searchResult);
+                $scope.searchResult = FilterByKey.filterByKey(sortResult, searchkey);
+                if (Object.keys($scope.searchResult).length === 0) {
+                    $scope.hasSearchResult = false;
+                } else {
+                    $scope.hasSearchResult = true;
+                }
+                console.log("search result:", $scope.searchResult);
                 for (var p in $scope.searchResult) {
                     console.log($scope.searchResult[p].date, $scope.searchResult[p].type, $scope.searchResult[p].title);
                 }
@@ -55,6 +59,9 @@ module.exports = function($rootScope, $http, FilterByKey) {
 
             // 按照年份排序
             $scope.sortByDate = function() {
+                $(".btn-group > .btn").removeClass("active");
+                $("#sortDateBtn").addClass("active");
+
                 var result = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
                 $scope.catagorySort = "year"; //默认时间year排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
@@ -62,11 +69,17 @@ module.exports = function($rootScope, $http, FilterByKey) {
             };
             // 按照类别排序
             $scope.sortByType = function() {
+                $(".btn-group > .btn").removeClass("active");
+                $("#sortTypeBtn").addClass("active");
+
                 var result = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
                 $scope.catagorySort = "type"; //默认时间date排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
                 return $scope.catagories;
             };
+
+
+
 
         }
     };

@@ -64,7 +64,7 @@ module.exports = function($filter) {
                         curCatagory.name = prj.year;
                         curCatagory.type = "year";
                     } else if (catagory === "type") {
-                    	curCatagory.name = prj.type;
+                    	curCatagory.name = prj.typename;
                     	curCatagory.type = prj.type;
                     }
                     curCatagory.data = [];

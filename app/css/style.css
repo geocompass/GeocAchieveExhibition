@@ -143,6 +143,8 @@ hr {
     /*background-color: #d2F291;*/
 }
 
+ /* 搜索过滤 */
+
 .search-filter {
     margin: 29px 0px 38px 0px;
     height: 45px;
@@ -175,6 +177,11 @@ hr {
     color: #0172ff;
     /*color: #0172ff;*/
     vertical-align: middle;
+}
+
+.btn-group > .btn.active {
+    color: #ffffff;
+    background-color: #62c300
 }
 
 /* 搜索结果展示---------------------------------- */
