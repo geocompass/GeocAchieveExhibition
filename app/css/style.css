@@ -7,6 +7,7 @@ span {
     font-family: "Microsoft Yahei", arial, sans-serif;
 }
 
+html,
 body {
     width: 100%;
     height: 100%;
@@ -21,6 +22,79 @@ body {
     min-width: 1140px;
     width: 1200px;
 }
+
+
+/* 登录框 --------------------------------*/
+
+.user-login-form {
+    display: flex;
+    background: url('../img/blur-back.png');
+    width: 100%;
+    height: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    zoom: 1;
+}
+
+
+
+.user-login {
+    width: 522px;
+    margin: auto;
+    /*margin-top: 250px;*/
+}
+
+.user-login > .login-form {
+    width: 250px;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.user-login > .company-logo > span {
+    width: 521px;
+    height: 112px;
+    background: url('../img/sprite.png') -29px 0px;
+    /*content: '';*/
+    display: block;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.user-login > .login-form .login-button {
+    width: 100%;
+}
+
+
+/* 模糊效果 */
+
+.blur-background {
+    -moz-filter: blur(50px);
+    -webkit-filter: blur(50px);
+    -o-filter: blur(50px);
+    -ms-filter: blur(50px);
+    filter: blur(50px);
+}
+
+
+/* home.html-------------------------------*/
 
 
 /* footer  */
@@ -65,12 +139,13 @@ hr {
     /*height: 71px;*/
 }
 
-#logo {
-    /*margin-top: 8px;*/
+#banner-logo{
     width: 138px;
     height: 54px;
     background: url('../img/sprite.png') -33px -115px;
-    border-size: 0;
+    display: inline-block;
+    /*vertical-align: middle;*/
+    margin-top: 10px;
 }
 
 .header-title {
@@ -116,10 +191,10 @@ hr {
     text-align: right;
 }
 
-#user-title button {
+#user-btn button {
     width: 60px;
-    height: 18px;
-    font-size: 8px;
+    height: 21px;
+    font-size: 6px;
 }
 
 .slider-img img {
@@ -228,7 +303,6 @@ hr {
     /*height: 400px;*/
     /*background-color: #aaccff;*/
     margin-bottom: 20px;
-    
     /*每个项目不割裂开 */
     margin: 0;
     -webkit-column-break-inside: avoid;
@@ -245,42 +319,8 @@ hr {
     margin: 0 auto;
     width: 146px;
     position: relative;
-    margin-bottom: 9px;
-}
-
-.catagory-title > img {
-    width: 146px;
-    height: 37px;
-    border-size: 0;
-    background: url('../img/sprite.png') -33px -172px;
-}
-
-.catagory-title > img.catagory-year {
-    background: url('../img/sprite.png') -325px -115px;
-}
-
-.catagory-title > img.catagory-landuse {
-    background: url('../img/sprite.png') -325px -115px;
-}
-
-.catagory-title > img.catagory-relic {
-    background: url('../img/sprite.png') -179px -115px;
-}
-
-.catagory-title > img.catagory-technology {
-    background: url('../img/sprite.png') -179px -152px;
-}
-
-.catagory-title > img.catagory-customs {
-    background: url('../img/sprite.png') -325px -152px;
-}
-
-.catagory-title > img.catagory-services {
-    background: url('../img/sprite.png') -179px -189px;
-}
-
-.catagory-title > img.catagory-data {
-    background: url('../img/sprite.png') -325px -189px;
+    margin-bottom: 70px;
+    margin-top: 20px;
 }
 
 .catagory-title > span {
@@ -295,6 +335,43 @@ hr {
     font-weight: 800;
 }
 
+.catagory-title > span.sprite-img {
+    width: 146px;
+    height: 37px;
+    border-size: 0;
+    background: url('../img/sprite.png') -33px -172px;
+    display: inline-block;
+}
+
+
+.catagory-title > span.catagory-year {
+    background: url('../img/sprite.png') -325px -115px;
+}
+
+.catagory-title > span.catagory-landuse {
+    background: url('../img/sprite.png') -325px -115px;
+}
+
+.catagory-title > span.catagory-relic {
+    background: url('../img/sprite.png') -179px -115px;
+}
+
+.catagory-title > span.catagory-technology {
+    background: url('../img/sprite.png') -179px -152px;
+}
+
+.catagory-title > span.catagory-customs {
+    background: url('../img/sprite.png') -325px -152px;
+}
+
+.catagory-title > span.catagory-services {
+    background: url('../img/sprite.png') -179px -189px;
+}
+
+.catagory-title > span.catagory-data {
+    background: url('../img/sprite.png') -325px -189px;
+}
+
 
 /*项目信息-----------------*/
 
@@ -305,6 +382,8 @@ hr {
     line-height: 36px;
     margin-bottom: 3px;
     background: red;
+    color: #ffffff;   
+    font-weight: 500;
     /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #aa6b0a, #ffffff);
     /* For Safari 5.1 to 6.0 */
@@ -316,17 +395,18 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.project-item > img {
+.project-item > span.sprite-img {
     width: 33px;
     height: 36px;
     background: url('../img/sprite.png') 0 0px;
-    margin-top: -4px;
+    display: inline-block;
+    /*position: absolute;*/
 }
 
-.project-item .project-name {
-    line-height: 36px;
-    color: #ffffff;
-    font-weight: 500;
+.project-item .project-catagoryname {
+    margin-left: 5px;
+}
+.project-item .project-name {    
     margin-left: 5px;
 }
 
@@ -342,11 +422,11 @@ hr {
     text-align: center;
 }
 
-.project-item .project-come > img {
+.project-item .project-come > span.sprite-img {
     height: 36px;
     width: 44px;
     background: url('../img/sprite.png') 0px -216px;
-    margin-top: -3px;
+    display: inline-block;
 }
 
 
@@ -364,8 +444,11 @@ hr {
     background: linear-gradient(to right, #aa6b0a, #ffffff);
     /* Standard syntax (must be last) */
 }
+.catagory-item span.sprite-img{
+    display: inline-block;
+}
 
-.catagory-item .prj-style-relic > img {
+.catagory-item .prj-style-relic > span.sprite-img {
     background: url('../img/sprite.png') 0 0px;
 }
 
@@ -397,7 +480,7 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-landuse > img {
+.catagory-item .prj-style-landuse > span.sprite-img {
     /*height: 32> px;*/
     background: url('../img/sprite.png') 0 -72px;
 }
@@ -430,7 +513,7 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-technology > img {
+.catagory-item .prj-style-technology > span.sprite-img {
     background: url('../img/sprite.png') 0 -108px;
 }
 
@@ -462,7 +545,7 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-customs > img {
+.catagory-item .prj-style-customs > span.sprite-img {
     background: url('../img/sprite.png') 0 -144px;
 }
 
@@ -494,7 +577,7 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-services > img {
+.catagory-item .prj-style-services > span.sprite-img {
     background: url('../img/sprite.png') 0 -36px;
 }
 
@@ -526,7 +609,7 @@ hr {
     /* Standard syntax (must be last) */
 }
 
-.catagory-item .prj-style-database > img {
+.catagory-item .prj-style-database > span.sprite-img {
     background: url('../img/sprite.png') 0 -180px;
 }
 

@@ -65,7 +65,10 @@ module.exports = function($rootScope, $http, FilterByKey) {
                 var result = FilterByKey.sortByAttr($scope.projects, ['date', -1], ['type', 1]);
                 $scope.catagorySort = "year"; //默认时间year排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
-                return $scope.catagories;
+                // return $scope.catagories;
+                if($scope.searchkey){
+                	$scope.searchProject();
+                }
             };
             // 按照类别排序
             $scope.sortByType = function() {
@@ -75,7 +78,10 @@ module.exports = function($rootScope, $http, FilterByKey) {
                 var result = FilterByKey.sortByAttr($scope.projects, ['type', 1], ['date', -1]);
                 $scope.catagorySort = "type"; //默认时间date排序，还可以类型type排序
                 $scope.catagories = FilterByKey.reconstructData(result, $scope.catagorySort);
-                return $scope.catagories;
+                // return $scope.catagories;
+                if($scope.searchkey){
+                	$scope.searchProject();
+                }
             };
 
 

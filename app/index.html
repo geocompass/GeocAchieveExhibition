@@ -4,23 +4,34 @@
 <head lang="zh-CN">
     <meta chartset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>国信司南（北京）地理信息技术有限公司</title>
+    <title>国信司南（北京）地理信息技术有限公司 - 登录</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- styles -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
-    <div ng-view></div>
+<body class="user-login-form">
+    <div class="user-login">
+        <div class="company-logo"><span class="sprite-img"></span></div>
+        <div class="login-form">
+            <div class="form-group inner-addon left-addon">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" class="form-control" placeholder="用户名" />
+            </div>
+            <div class="form-group inner-addon left-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+                <input type="text" class="form-control" placeholder="密码" />
+            </div>
+            <a href="home.html">
+                <button type="button" class="btn btn-primary login-button">登录</button>
+            </a>
+        </div>
+    </div>
     <!-- scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="js/bundled.js"></script>
 </body>
 
 </html>

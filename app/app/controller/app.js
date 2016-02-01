@@ -3,6 +3,7 @@ module.exports = function($scope, $window, $http) {
     console.log("appCtrl required");
     //定义url
     $scope.base_url = "http://localhost:8888/";
+    $scope.hasLogin = false;    //默认为未登陆
 
 
     // 获取数据

@@ -19,10 +19,12 @@
     <div ng-show="searchkey">
         <div class="search-project catagory-item">
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in searchResult">
-                <img />
-                <span class="project-name">[{{project.typename}}]</span>
-                <span class="project-name">{{project.title}}</span>
-                <span class="project-come pull-right"><img /></span>
+                <span class="sprite-img pull-left"></span>
+                <div class="pull-left">
+                    <span class="project-catagoryname">[{{project.typename}}]</span>
+                    <span class="project-name">{{project.title}}</span>
+                </div>
+                <span class="project-come pull-right"><span class="sprite-img"></span></span>
                 <span class="project-date pull-right">{{project.date}}</span>
             </div>
         </div>
@@ -33,14 +35,16 @@
     <div class="two-columns">
         <div class="catagory-item" ng-repeat="(key, catagory) in catagories">
             <div class="catagory-title">
-                <img ng-class="'catagory-{{catagory.type}}'" />
+                <span class="sprite-img" ng-class="'catagory-{{catagory.type}}'"></span>
                 <span> {{catagory.name}}</span>
             </div>
             <div class="project-item" ng-class="'prj-style-{{project.type}}'" ng-repeat="(key, project) in catagory.data">
-                <img />
-                <span class="project-name">[{{project.typename}}]</span>
-                <span class="project-name">{{project.title}}</span>
-                <span class="project-come pull-right"><img /></span>
+                <span class="sprite-img pull-left"></span>
+                <div class="pull-left">
+                    <span class="project-catagoryname">[{{project.typename}}]</span>
+                    <span class="project-name">{{project.title}}</span>
+                </div>
+                <a ng-href="{{project.url}}" target="_blank"><span class="project-come pull-right"><span class="sprite-img">.</span></span></a>
                 <span class="project-date pull-right">{{project.date}}</span>
             </div>
         </div>

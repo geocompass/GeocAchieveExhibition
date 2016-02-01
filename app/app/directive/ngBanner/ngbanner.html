@@ -1,9 +1,9 @@
 <div id="header">
     <div class="banner">
         <div class="container">
-            <div id="">
-                <img id="logo">
-                <span class="header-title">{{companyname}}</span>
+            <div id="banner-content">
+                <span class="sprite-img pull-left" id="banner-logo"></span>
+                <span class="header-title pull-left">{{companyname}}</span>
                 <div id="user-info" class="pull-right">
                     <div id="user-photo">
                         <img ng-src="{{user.photosrc}}" title="">
@@ -12,7 +12,7 @@
                         <div id="user-name">{{user.username}}</div>
                         <div id="user-btn">
                             <!-- <button class="btn btn-default btn-xs">注销</button> -->
-                            <button>注销</button>
+                            <a href="index.html"><button>注销</button></a>
                         </div>
                     </div>
                 </div>
