@@ -303,7 +303,7 @@ hr {
     -webkit-column-gap: 74px;
     -moz-column-gap: 74px;
     column-gap: 74px;
-    -moz-column-fill: auto;
+    /*-moz-column-fill: auto;*/
     /*padding: 3px;*/
     /*background-color: #0088cc;*/
     /*height: 900px;*/
@@ -389,7 +389,7 @@ hr {
     background: url('../img/sprite.png') -179px -189px;
 }
 
-.catagory-title > span.catagory-data {
+.catagory-title > span.catagory-database {
     background: url('../img/sprite.png') -325px -189px;
 }
 
