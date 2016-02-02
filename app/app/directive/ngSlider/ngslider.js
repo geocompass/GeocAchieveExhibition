@@ -17,6 +17,7 @@ module.exports = function($rootScope, $http) {
                 var slider = $scope.slider[randomInt - 1];                
                 if (slider) {
                     $scope.sliderSrc = slider.src;
+                    $scope.sliderDesc = slider.desc;
                 }
             }
 
